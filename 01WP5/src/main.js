@@ -1,4 +1,4 @@
-import './style.css';
+import './style.less';
 
 function component() {
   var element = document.createElement('div')
