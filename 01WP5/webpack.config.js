@@ -17,17 +17,32 @@ module.exports = {
           // 写法三
           { loader: 'style-loader' },
           { loader: 'css-loader' },
+          { loader: 'postcss-loader' }, // 单独文件
+          // { // 复合写法
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     postcssOptions: {
+          //       plugins: [require('autoprefixer')],
+          //     },
+          //   },
+          // },
         ],
       },
       {
         test: /\.less$/,
-        // loader: "css-loader", // 写法一
-        // use: ["css-loader"], // 写法二
         use: [
-          // 写法三
           { loader: 'style-loader' },
           { loader: 'css-loader' },
           { loader: 'less-loader' },
+          { loader: 'postcss-loader' },
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     postcssOptions: {
+          //       plugins: [require('autoprefixer')],
+          //     },
+          //   },
+          // },
         ],
       },
     ],
