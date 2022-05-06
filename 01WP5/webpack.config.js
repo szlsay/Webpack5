@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist'),
+    // assetModuleFilename: 'img/[name].[hash:8][ext]',
   },
   module: {
     rules: [
@@ -59,20 +60,27 @@ module.exports = {
       //   ],
       //   type: 'javascript/auto',
       // },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)$/i,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         name: '[name].[hash:8].[ext]',
+      //         outputPath: 'img',
+      //         limit: 20 * 1024,
+      //         esModule: false,
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[name].[hash:8].[ext]',
-              outputPath: 'img',
-              limit: 20 * 1024,
-              esModule: false,
-            },
-          },
-        ],
-        type: 'javascript/auto',
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name].[hash:8][ext]',
+        },
       },
     ],
   },
