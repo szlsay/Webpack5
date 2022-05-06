@@ -1,0 +1,7 @@
+@import './style.less';
+
+.bg-image {
+  display: inline-block;
+  background-image: url('../img/girl.jpg');
+  background-size: contain;
+}
