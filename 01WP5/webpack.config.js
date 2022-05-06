@@ -45,17 +45,34 @@ module.exports = {
           // },
         ],
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[hash:8].[ext]',
+      //         outputPath: 'img',
+      //         esModule: false,
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[name].[hash:8].[ext]',
               outputPath: 'img',
+              limit: 20 * 1024,
+              esModule: false,
             },
           },
         ],
+        type: 'javascript/auto',
       },
     ],
   },
