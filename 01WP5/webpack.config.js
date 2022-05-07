@@ -83,9 +83,30 @@ module.exports = {
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 20 * 1024
-          }
-        }
+            maxSize: 20 * 1024,
+          },
+        },
+      },
+      // {
+      //   test: /\.ttf|eot|woff2?$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[hash:8].[ext]',
+      //         outputPath: 'font',
+      //         esModule: false,
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
+      {
+        test: /\.ttf|eot|woff2?$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font/[name].[hash:8][ext]',
+        },
       },
     ],
   },

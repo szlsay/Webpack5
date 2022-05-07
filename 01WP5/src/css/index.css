@@ -1,4 +1,5 @@
 @import './style.less';
+@import "../font/iconfont.css";
 
 .bg-image {
   display: inline-block;

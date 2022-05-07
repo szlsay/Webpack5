@@ -20,6 +20,12 @@ function component() {
   bgDivEl.style.backgroundColor = 'red'
   element.appendChild(bgDivEl)
 
+  // 创建一个i元素, 设置一个字体
+  const iEl = document.createElement('i')
+  iEl.style.color = 'green'
+  iEl.className = 'toutiao toutiao-shouye'
+  element.appendChild(iEl)
+
   return element
 }
 document.body.appendChild(component())
