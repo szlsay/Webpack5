@@ -10,6 +10,7 @@
     "start": "webpack --config webpack.config.js"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "less-loader": "^10.2.0",
