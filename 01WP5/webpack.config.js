@@ -1,6 +1,9 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { DefinePlugin } = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
@@ -13,6 +16,20 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'hello say',
+      template: './public/index.html',
+    }),
+    new DefinePlugin({
+      BASE_URL: '"./"',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          globOptions: {
+            ignore: ['**/index.html', '**/.DS_Store', '**/a.css'],
+          },
+        },
+      ],
     }),
   ],
   module: {
